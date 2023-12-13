@@ -235,6 +235,12 @@ def search_book():
         else:
             print('Book doesn\'t exist')
 
+def display_all_books():
+
+    cursor.execute('''SELECT * FROM book''')
+    for row in cursor:
+        print(row[0], '-', row[1], '-', row[2], '-', row[3])
+
 # Section that prompts and receives user inputs
 while True:
 
@@ -244,6 +250,7 @@ Pick an option:
 2.    Update book
 3.    Delete book
 4.    Search book
+5.    Display all books
 0.    Exit
       ''')
     
@@ -255,6 +262,8 @@ Pick an option:
         delete_book()
     elif option == '4':
         search_book()
+    elif option == '5':
+        display_all_books()
     elif option == '0':
         print('Thanks for using the app. Have a great day!')
         break
