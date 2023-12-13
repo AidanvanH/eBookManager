@@ -187,7 +187,7 @@ Which section would you like to update:
                     while True:
 
                         try:
-                            new_qnt = int(input('Enter the new books title: '))
+                            new_qnt = int(input('Enter the new books quantity: '))
                             # Saves the changes to book's quantity in the database
                             cursor.execute('''UPDATE book SET qnt = ? WHERE title = ?''', (new_qnt, which_book))
                             db.commit()
