@@ -237,7 +237,6 @@ def search_book():
 
 def display_all_books():
 
-
     cursor.execute('''SELECT * FROM book''')
     for row in cursor:
         print(row[0], '-', row[1], '-', row[2], '-', row[3])
